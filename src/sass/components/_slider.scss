@@ -1,14 +1,22 @@
 .slider-content {
-  //   background-color: rgb(229, 230, 215);
-
   padding-top: 154px;
   padding-bottom: 170px;
-
   position: relative;
+  @media screen and(min-width:768px) {
+    padding-right: 74px;
+    padding-left: 74px;
+    padding-top: 279px;
+    padding-bottom: 197px;
+  }
 }
 .slider-collage {
   position: absolute;
   top: -44px;
+  @media screen and(min-width:768px) {
+    width: 621px;
+    height: auto;
+    top: -95px;
+  }
 }
 .slider-client-image {
   margin-right: auto;
@@ -17,6 +25,9 @@
 
   border-radius: 50%;
   overflow: hidden;
+  @media screen and(min-width:768px) {
+    margin-bottom: 19px;
+  }
 }
 .slider-comment {
   position: relative;
@@ -37,6 +48,36 @@
     height: 40px;
     background-image: url(./../images/quotes.svg);
   }
+  @media screen and(min-width:768px) {
+    display: none;
+  }
+}
+.slider-comment-tablet {
+  display: none;
+  position: relative;
+  padding-top: 47px;
+  padding-bottom: 28px;
+
+  background-color: #fafafa;
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    top: 28px;
+    left: 61px;
+    display: block;
+    width: 54px;
+    height: 40px;
+    background-image: url(./../images/quotes.svg);
+    @media screen and(min-width:768px) {
+      top: 30px;
+      left: 50px;
+    }
+  }
+
+  @media screen and(min-width:768px) {
+    display: block;
+  }
 }
 .slider-comment-content {
   position: relative;
@@ -46,6 +87,13 @@
   font-size: 12px;
   line-height: 225%;
   text-align: center;
+  @media screen and(min-width:768px) {
+    padding-right: 34px;
+    padding-left: 60px;
+    font-size: 14px;
+    line-height: 2.26;
+    letter-spacing: 0.04em;
+  }
 }
 .slider-comment-underline {
   display: block;
@@ -71,8 +119,12 @@
 }
 .slider-client-name {
   font-size: 14px;
-  line-height: 186%;
+  line-height: 1.857;
   text-align: center;
+  @media screen and(min-width:768px) {
+    font-size: 16px;
+    line-height: 1.875;
+  }
 }
 .slider-slaid-image {
   margin-top: 30px;
@@ -99,6 +151,7 @@
 .slider-hidden {
   display: none;
 }
+
 .slider-slick .slick-dots {
   margin-left: auto;
   margin-right: auto;
