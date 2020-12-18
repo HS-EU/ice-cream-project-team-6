@@ -71,7 +71,7 @@
     background-image: url(./../images/quotes.svg);
     @media screen and(min-width:768px) {
       top: 30px;
-      left: 50px;
+      left: 40px;
     }
   }
 
@@ -81,23 +81,27 @@
 }
 .slider-comment-content {
   position: relative;
-  font-weight: 700;
+  font-weight: 500;
   z-index: 99;
   display: block;
   font-size: 12px;
-  line-height: 225%;
+  line-height: 2.258;
   text-align: center;
   @media screen and(min-width:768px) {
     padding-right: 34px;
     padding-left: 60px;
     font-size: 14px;
-    line-height: 2.26;
+    line-height: 2.14;
     letter-spacing: 0.04em;
   }
 }
 .slider-comment-underline {
   display: block;
   border-bottom: 1px solid #e1e1e1;
+  @media screen and(min-width:768px) {
+    padding-right: 44px;
+    padding-left: 20px;
+  }
 }
 .slider-slaid {
   margin-top: 30px;
