@@ -3,33 +3,37 @@
     padding-bottom: 97px;
 
     background-color: $second-bg-color;
-    background-image: url(../images/1-mobile/traditionbg.png);
     background-repeat: no-repeat;
     background-position: 80% 51%;
     background-size: contain;
-    @media screen and (min-device-pixel-ratio: 2),
-    screen and (-webkit-min-device-pixel-ratio: 2),
-    screen and (-o-min-device-pixel-ratio: 2/1),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
-        background-image: url(../images/1-mobile/traditionbg@2x.png);
+    
+    @media screen and (max-width: 767px) {
+        background-image: url(../images/1-mobile/traditionbg.png);
+        
+        @media screen and (min-device-pixel-ratio: 2),
+          screen and (-webkit-min-device-pixel-ratio: 2),
+          screen and (-o-min-device-pixel-ratio: 2/1),
+          screen and (min-resolution: 192dpi),
+          screen and (min-resolution: 2dppx) {
+          background-image: url(../images/1-mobile/traditionbg@2x.png);
+        }
     }
-    @media screen and (min-width: 768px) and (max-width: 1279px) {
+        
+    @media screen and (min-width: 768px) {
         padding-bottom: 140px;
-        background-image: none;
     }
+        
     @media screen and (min-width: 1280px) {
-        padding-bottom: 139px;
         background-image: url(../images/3-desktop/traditionbg.png);
+        
+        @media screen and (min-device-pixel-ratio: 2),
+        screen and (-webkit-min-device-pixel-ratio: 2),
+        screen and (-o-min-device-pixel-ratio: 2/1),
+        screen and (min-resolution: 192dpi),
+        screen and (min-resolution: 2dppx) {
+        background-image: url(../images/3-desktop/traditionbg@2x.png);
+        }
     }
-    // @media screen and (min-device-pixel-ratio: 2),
-    // screen and (-webkit-min-device-pixel-ratio: 2),
-    // screen and (-o-min-device-pixel-ratio: 2/1),
-    // screen and (min-resolution: 192dpi),
-    // screen and (min-resolution: 2dppx),
-    // screen and (min-width: 1280px) {
-    //     background-image: url(../images/3-desktop/traditionbg@2x.png);
-    // }
 }
 
 .tradition-conteiner {
