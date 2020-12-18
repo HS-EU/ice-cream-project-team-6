@@ -99,6 +99,10 @@
   width: 32px;
   height: 32px;
   background-color: $second-title-color;
+  transition: all 250ms ease;
+  &:hover {
+    background-color: #D41443;   
+  }  
 }
 .icon-link {
   fill: $button-bg-1;
@@ -205,10 +209,6 @@ button {
 .btn.footer-red {
   background-color: $button-bg-2;
   color: $button-bg-1;
-  &:hover,
-  &:focus {
-    background-color: $button-hover-2;
-  }
 }
 .footer-btn-icon {
   margin-left: 8px;
