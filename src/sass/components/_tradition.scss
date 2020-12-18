@@ -1,6 +1,6 @@
 .tradition {
     padding-top: 125px;
-    padding-bottom: 97px;
+    padding-bottom: 145px;
 
     background-color: $second-bg-color;
     background-repeat: no-repeat;
@@ -37,6 +37,7 @@
 }
 
 .tradition-conteiner {
+    margin-bottom: 40px;
     @media screen and (min-width: 768px) {
         display: flex;
         margin-bottom: 66px;
@@ -92,11 +93,8 @@
 }
 
 .tradition-text-conteiner {
-    margin-bottom: 40px;
-
     @media screen and (min-width: 768px) {
         padding-top: 50px;
-        margin-bottom: 0;
     }
 }
 
@@ -121,7 +119,7 @@
     margin-bottom: 30px;
     
     font-size: 12px;
-    line-height: 1.9;
+    line-height: 1.6;
 
     @media screen and (min-width: 768px) {
         padding: 0;
@@ -177,7 +175,7 @@
     width: 176px;
     height: 44px;
 
-    font-weight: bold;
+    font-weight: 700;
     font-size: 14px;
     line-height: 1.29;
 
@@ -193,7 +191,7 @@
 
     
     @media screen and (min-width: 768px) {
-        margin: 0; 
+        margin-left: 0; 
     }
 
     @media screen and (min-width: 1280px) {
@@ -242,6 +240,7 @@
     display: block;
     padding-bottom: 15px;
     font-family: Titan One;
+    font-weight: 400;
     font-size: 36px;
     line-height: 1.14;
     letter-spacing: 0.04em;
@@ -261,7 +260,7 @@
 
 .tradition-list-text {
     max-width: 230px;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 12px;
     line-height: 2.0;
 
