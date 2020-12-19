@@ -18,7 +18,6 @@
 }
 .footer-text {
   @media screen and (max-width: 767px) {
-    padding-top: 113px;
     width: 234px;
     margin-bottom: 43px;
   }
@@ -79,7 +78,6 @@
   @media screen and (max-width: 767px) {
     padding-bottom: 43px;
   }
-  
 }
 .contacts-icon__list {
   display: flex;
@@ -102,15 +100,15 @@
   background-color: $second-title-color;
   transition: all 250ms ease;
   &:hover {
-    background-color: #D41443;   
-  }  
+    background-color: #d41443;
+  }
 }
 .icon-link {
   fill: $button-bg-1;
   padding-top: 2px;
-    &_telegram {
-      margin-left: -3px;
-    }
+  &_telegram {
+    margin-left: -3px;
+  }
 }
 .contacts-tel {
   font-family: DM Sans;
@@ -150,76 +148,4 @@
     padding-top: 9px;
     padding-bottom: 10px;
   }
-}
-.footer-nav {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 165px;
-    &:not(:last-child) {
-      margin-right: 15px;
-  }
-  @media screen and (max-width: 767px){
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 113px;
-  }
-}
-.footer-nav .btn {
-  padding: 0;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  display: block;
-
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.3125;
-
-  color: $button-bg-2;
-  background-color: $button-bg-1;
-  border: 0;
-  border-radius: 22px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover,
-  &:focus {
-    background-color: $button-hover-1;
-  }
-}
-.footer-red {
-  margin-bottom: 10px;
-  max-width: 161px;
-  width: 100%; 
-  @media screen and (min-width: 768px){
-    margin: 0 15px 0 0;
-    max-width: 191px;
-    width: 100%;
-  }
-}
-.footer-white {
-  width: 100%;
-  max-width: 161px;
-  @media screen and (min-width: 768px){
-    max-width: 174px;
-    width: 100%;
-  }
-}
-
-button {
-  outline: transparent;
-}
-
-.btn.footer-red {
-  background-color: $button-bg-2;
-  color: $button-bg-1;
-}
-.footer-btn-icon {
-  margin-left: 8px;
-  width: 7px;
-  height: 10px;
-  stroke: $button-bg-2;
-}
-.footer-btn-icon-white {
-  margin-left: 8px;
-  width: 7px;
-  height: 10px;
-  stroke: $button-bg-1;
 }

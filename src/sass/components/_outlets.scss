@@ -3,14 +3,17 @@
 
   .content-container {
     position: relative;
-    height: 1291px;
+    padding-top: 1291px;
+    padding-bottom: 113px;
 
     @media screen and (min-width: 768px) {
-      height: 544px;
+      padding-top: 547px;
+      padding-bottom: 165px;
     }
 
     @media screen and (min-width: 1280px) {
-      height: 556px;
+      padding-top: 556px;
+      padding-bottom: 165px;
       background-image: url(../images/3-desktop/outlets-bg.png);
       background-size: contain;
       background-repeat: no-repeat;
@@ -264,4 +267,75 @@
   @media screen and(min-width:768px) {
     margin-bottom: 15px;
   }
+}
+.outlets-nav {
+  display: flex;
+  justify-content: center;
+
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.outlets-nav .btn {
+  padding: 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: block;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.3125;
+
+  color: $button-bg-2;
+  background-color: $button-bg-1;
+  border: 0;
+  border-radius: 22px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    background-color: $button-hover-1;
+  }
+}
+.outlets-red {
+  margin-bottom: 10px;
+  max-width: 161px;
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    margin: 0 15px 0 0;
+    max-width: 191px;
+    width: 100%;
+  }
+}
+.outlets-white {
+  width: 100%;
+  max-width: 161px;
+  @media screen and (min-width: 768px) {
+    max-width: 174px;
+    width: 100%;
+  }
+}
+
+button {
+  outline: transparent;
+}
+
+.btn.outlets-red {
+  background-color: $button-bg-2;
+  color: $button-bg-1;
+}
+.outlets-btn-icon {
+  margin-left: 8px;
+  width: 7px;
+  height: 10px;
+  stroke: $button-bg-2;
+}
+.outlets-btn-icon-white {
+  margin-left: 8px;
+  width: 7px;
+  height: 10px;
+  stroke: $button-bg-1;
 }
