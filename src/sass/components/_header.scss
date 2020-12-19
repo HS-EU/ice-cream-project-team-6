@@ -1,30 +1,93 @@
 // стиль для ссылок
 .link {
   text-decoration: none;
+  display: block;
+}
+
+.content-container-overlay {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (max-width: 408px) {
+    min-width: 320px;
+  }
+
+  @media screen and (min-width: 409px) and (max-width: 767px) {
+    width: 408px;
+  }
+
+  @media screen and(min-width:768px) {
+    width: 768px;
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+
+  @media screen and(min-width:1280px) {
+    width: 1280px;
+    padding-left: 115px;
+    padding-right: 115px;
+  }
 }
 
 .overlay {
   position: relative;
-  left: 0;
-  right: 0;
-  top: 0;
 
   padding-top: 6px;
   height: 502px;
-
-  background-color: $heder-bg-color;
   overflow-x: hidden;
+
+  @media screen and (min-width: 768px) {
+    height: 400px;
+    overflow-x: unset;
+    padding-top: 37px;
+    padding-bottom: 28px;
+  }
+  @media screen and (min-width: 1280px) {
+    height: 665px;
+    overflow-x: unset;
+    padding-top: 38px;
+    padding-right: 46px;
+    padding-left: 46px;
+  }
 }
 
 .header {
   // Обертка для хедера
-  &-layout {
-    display: flex;
-    align-items: center;
-  }
+  background-color: $header-bg-color;
 
-  &-layout-item:nth-child(3) {
-    margin-left: auto;
+  &-ice-cream {
+    overflow-x: visible;
+
+    &::before {
+      content: '';
+      background-color: $second-title-color;
+      width: 346px;
+      height: 344px;
+      position: absolute;
+      border-radius: 50%;
+
+      @media screen and (max-width: 767px) {
+        top: 83px;
+        left: 36px;
+        overflow-x: visible;
+      }
+
+      @media screen and (min-width: 768px) {
+        width: 324px;
+        height: 322px;
+        top: 31px;
+        right: 137px;
+      }
+
+      @media screen and (min-width: 1280px) {
+        width: 538px;
+        height: 538px;
+        top: 52px;
+        right: 267px;
+      }
+    }
   }
 
   // Кнопка купить
@@ -32,15 +95,13 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
-    padding: 0;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding: 12px 0px;
     display: block;
     width: 210px;
 
     font-weight: 700;
     font-size: 16px;
-    line-height: 1.3125;
+    line-height: 1.31;
 
     color: $button-bg-2;
     background-color: $button-bg-1;
@@ -61,101 +122,221 @@
     stroke: $button-bg-2;
   }
 }
+.main-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
 
-.menu {
-  // кнопка меню
-  &-btn {
-    position: relative;
-    display: block;
-    z-index: 11;
-
-    padding: 0;
-    width: 100%;
-
-    border: 0;
-    background-color: rgba(0, 0, 0, 0);
-  }
-
-  // Стили свг в кнопке меню
-  &-icon {
-    padding-top: 2px;
-    padding-bottom: 2px;
-    display: block;
-    width: 20px;
-    height: 20px;
-
-    stroke: $button-bg-2;
-  }
-
-  // Стили для close
-  &-close {
-    stroke: $button-bg-1;
-  }
-
-  // Стили для открытия-закрытия меню
-  &-btn &-close {
+.main-nav {
+  @media screen and (max-width: 1279px) {
     display: none;
   }
-
-  &-btn.is-open &-close {
+  z-index: 5;
+  &-list {
+    display: flex;
+  }
+  &-item {
+    &:not(:first-child) {
+      margin-left: 35px;
+    }
+  }
+  &-link {
     display: block;
+    font-family: $main-text-font;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.31;
+
+    display: flex;
+    align-items: center;
+
+    color: $third-text-color;
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  background-color: rgba(144, 126, 130, 0.7);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
+  }
+
+  &.is-open &-content {
+    transform: translateX(0);
+  }
+
+  &-content {
+    margin-left: auto;
+    filter: drop-shadow(-8px 0px 20px rgba(0, 0, 0, 0.25));
+
+    position: relative;
+    height: 100%;
+    background-color: $mobile-menu-bg-color;
+    width: 254px;
+    transform: translateX(100%);
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    padding-top: 60px;
+  }
+
+  &-close {
+    display: none;
   }
 
   &-btn.is-open &-burger {
     display: none;
   }
 
-  // Стили блока меню
-  &-container {
+  &-close {
+    display: block;
+    stroke: $third-text-color;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      stroke: $accent-color;
+    }
+  }
+
+  &-btn {
+    display: block;
     position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 10;
+    top: 24px;
+    right: 20px;
 
-    padding-top: 60px;
+    background-color: transparent;
+    width: auto;
+    height: 20px;
+    border: none;
+    padding: 0;
 
-    display: none;
-    width: 250px;
-    height: 502px;
+    &.open {
+      @media screen and (min-width: 768px) and (max-width: 1279px) {
+        top: 52px;
+        right: 224px;
+        z-index: 4;
+        outline: none;
+      }
+      @media screen and (min-width: 1280px) {
+        display: none;
+      }
+    }
+  }
+  &-icon {
+    display: block;
+    width: 20px;
+    height: 20px;
 
-    background-color: $mobail-menu-bg-color;
-    box-shadow: (-8px 0px 20px rgba(0, 0, 0, 0.25));
+    stroke: $button-bg-2;
+  }
+  & .btn.header-btn {
+    width: 209px;
+
+    @media screen and (min-width: 768px) {
+      width: 186px;
+    }
   }
 }
 
-.is-open {
-  display: block;
-}
-
-// Стили для основной навигации страницы
 .site-nav {
-  &-item {
-    padding: 12px 20px;
+  &-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-    border-bottom: 1px solid #e18298;
-  }
-
-  &-item:first-child {
     border-top: 1px solid #e18298;
   }
 
-  &-link {
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.286;
-
-    color: $third-text-color;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &-item {
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    width: 100%;
+    height: 42px;
+    border-bottom: 1px solid #e18298;
   }
 
-  &-link:hover,
-  &-link:focus {
-    color: $accent-color;
+  &-link {
+    font-family: $main-text-font;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.3;
+
+    color: $third-text-color;
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
   }
 }
 
-.current {
+.positioned-btn {
+  position: relative;
+  z-index: 5;
+  padding: 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: block;
+  width: 159px;
+  text-align: start;
+  padding-left: 38px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.31;
   color: $accent-color;
+  background-color: $third-text-color;
+  border: 0;
+  border-radius: 22px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-right: 50px;
+  }
+
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    background-color: $button-hover-1;
+  }
+
+  &-icon {
+    width: 8px;
+    height: 16px;
+    position: absolute;
+    top: 15px;
+    right: 38px;
+    stroke: $accent-color;
+  }
 }
 
 // Стили блока-героя
@@ -164,24 +345,67 @@
   padding-right: 0;
   padding-left: 0;
 
+  @media screen and (min-width: 768px) {
+    padding-top: 15px;
+  }
+
+  &-milk {
+    margin-top: 20px;
+    position: relative;
+    margin-bottom: 28px;
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+    @media screen and (min-width: 1280px) {
+      display: flex;
+      align-items: center;
+      margin-top: 56px;
+      position: absolute;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
   // Обертка для заголовка героя и кнопок под ним
   &-title-container {
     position: relative;
     z-index: 5;
+
+    @media screen and (min-width: 1280px) {
+      margin-top: 69px;
+    }
   }
 
   // Заголовок героя
   &-title {
     margin-bottom: 20px;
-    max-width: 218px;
+    width: 230px;
 
     font-family: Titan One;
     font-weight: 400;
     font-size: 48px;
     line-height: 0.965;
+    letter-spacing: 0.04em;
 
     color: $button-bg-2;
     text-transform: uppercase;
+
+    @media screen and (min-width: 768px) {
+      font-size: 34px;
+      line-height: 0.905;
+      width: 162px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      font-size: 58px;
+      line-height: 0.905;
+      width: 277px;
+      margin-left: 23px;
+    }
   }
 
   &-accent {
@@ -192,12 +416,23 @@
     letter-spacing: 0.04em;
 
     color: $button-bg-1;
+    @media screen and (min-width: 768px) {
+      font-size: 22px;
+      line-height: 25px;
+    }
+    @media screen and (min-width: 1280px) {
+      font-size: 38px;
+      line-height: 1.16;
+      width: 277px;
+    }
   }
 
   // Кнопки героя
-
   &-btn {
-    margin-right: 8px;
+    cursor: pointer;
+    &-accent {
+      margin-right: 8px;
+    }
     padding: 8px 13px;
 
     font-weight: normal;
@@ -209,6 +444,19 @@
     border: 0;
     border-radius: 20px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media screen and (min-width: 1280px) {
+      min-width: 104px;
+      height: 40px;
+      font-size: 14px;
+      line-height: 1.23;
+      padding: 8px 20px;
+      margin-left: 23px;
+
+      &-accent {
+        margin-right: 15px;
+      }
+    }
   }
   &-btn:hover,
   &-btn:focus {
@@ -228,40 +476,189 @@
   }
 }
 
-// Стили картинки header-ice-cream
-.icecr-bg {
+.statistics {
   position: absolute;
-  top: 92px;
-  right: 32px;
+  top: 97px;
+  right: 42px;
 
-  // Круг за картинкой header-ice-cream
-  &::before {
-    position: absolute;
-    top: -9px;
-    left: -81px;
-    z-index: 1;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 
-    content: '';
+  @media screen and (min-width: 1280px) {
+    top: 156px;
+    right: 97px;
+  }
 
-    width: 346px;
-    height: 346px;
+  &-item {
+    display: flex;
+    flex-direction: column;
 
-    border-radius: 50%;
-    background-color: $second-title-color;
+    margin-bottom: 13px;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: $third-text-color;
+      position: absolute;
+      top: -3px;
+      right: -8px;
+
+      @media screen and (min-width: 1280px) {
+        width: 30px;
+        height: 30px;
+        top: -6px;
+        right: -18px;
+      }
+    }
+  }
+  &-number {
+    display: block;
+    font-family: $title-font;
+    font-style: normal;
+    font-size: 28px;
+    line-height: 1.13;
+
+    text-align: right;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    color: $accent-color;
+    z-index: 4;
+
+    @media screen and (min-width: 1280px) {
+      font-size: 46px;
+      line-height: 1.15;
+    }
+  }
+  &-text {
+    font-family: $main-text-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 8px;
+    line-height: 1.25;
+    text-align: right;
+
+    color: $third-text-color;
+    text-transform: lowercase;
+
+    @media screen and (min-width: 1280px) {
+      font-size: 14px;
+      line-height: 1.3;
+    }
   }
 }
 
-.img {
-  &-icecr {
-    position: relative;
-    z-index: 2;
-    width: 171px;
+.div-milk {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    position: absolute;
+    left: 120px;
+    top: 47px;
+  }
 
-    @media screen and(min-width:768px) {
-      width: 143px;
+  @media screen and (min-width: 1280px) {
+    position: absolute;
+    left: 190px;
+    top: 55px;
+  }
+
+  &-text {
+    font-family: $main-text-font;
+    font-style: normal;
+    font-size: 8px;
+    line-height: 1.5;
+    color: $third-text-color;
+    width: 114px;
+    height: 48px;
+
+    @media screen and (min-width: 1280px) {
+      font-size: 14px;
+      line-height: 1.4;
+      width: 200px;
+      height: 78px;
     }
-    @media screen and(min-width:1200px) {
-      width: 100%;
+  }
+  &-btn {
+    height: 18px;
+    width: 18px;
+    background-color: $third-text-color;
+    border: 0;
+    border-radius: 50%;
+    display: block;
+    margin-top: 7px;
+    position: relative;
+
+    @media screen and (min-width: 1280px) {
+      margin-top: 20px;
+      width: 26px;
+      height: 26px;
+    }
+
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      background-color: $button-hover-1;
+    }
+  }
+  &-btn-icon {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    fill: $accent-color;
+    width: 8px;
+    height: 8px;
+    @media screen and (min-width: 1280px) {
+      top: 30%;
+      width: 11px;
+      height: 11px;
+    }
+  }
+}
+
+// Стили картинки header-ice-cream
+.img {
+  &-girl {
+    position: absolute;
+    right: 34px;
+    bottom: 0;
+    z-index: 9;
+
+    @media screen and(max-width:767px) {
+      display: none;
+    }
+
+    @media screen and (min-width: 1280px) {
+      width: 293px;
+      right: 109px;
+    }
+  }
+
+  &-ice-cream {
+    position: absolute;
+    bottom: 0;
+
+    @media screen and (max-width: 767px) {
+      left: 117px;
+      width: 171px;
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 143px;
+      right: 247px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      width: 236px;
+      right: 450px;
+    }
+  }
+
+  &-milk {
+    @media screen and (min-width: 1280px) {
+      width: 188px;
     }
   }
 }
