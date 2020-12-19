@@ -1,19 +1,50 @@
 .tradition {
     padding-top: 125px;
-    padding-bottom: 97px;
+    padding-bottom: 145px;
 
     background-color: $second-bg-color;
-    background-image: url(../images/1-mobile/traditionbg.png);
     background-repeat: no-repeat;
     background-position: 80% 51%;
     background-size: contain;
     
-    @media screen and (min-device-pixel-ratio: 2),
-    screen and (-webkit-min-device-pixel-ratio: 2),
-    screen and (-o-min-device-pixel-ratio: 2/1),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
-        background-image: url(../images/1-mobile/traditionbg@2x.png);
+    @media screen and (max-width: 767px) {
+        background-image: url(../images/1-mobile/traditionbg.png);
+        
+        @media screen and (min-device-pixel-ratio: 2),
+          screen and (-webkit-min-device-pixel-ratio: 2),
+          screen and (-o-min-device-pixel-ratio: 2/1),
+          screen and (min-resolution: 192dpi),
+          screen and (min-resolution: 2dppx) {
+          background-image: url(../images/1-mobile/traditionbg@2x.png);
+        }
+    }
+        
+    @media screen and (min-width: 768px) {
+        padding-bottom: 140px;
+    }
+        
+    @media screen and (min-width: 1280px) {
+        background-image: url(../images/3-desktop/traditionbg.png);
+        
+        @media screen and (min-device-pixel-ratio: 2),
+        screen and (-webkit-min-device-pixel-ratio: 2),
+        screen and (-o-min-device-pixel-ratio: 2/1),
+        screen and (min-resolution: 192dpi),
+        screen and (min-resolution: 2dppx) {
+        background-image: url(../images/3-desktop/traditionbg@2x.png);
+        }
+    }
+}
+
+.tradition-conteiner {
+    margin-bottom: 40px;
+    @media screen and (min-width: 768px) {
+        display: flex;
+        margin-bottom: 66px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        margin-bottom: 39px;
     }
 }
 
@@ -25,6 +56,16 @@
     text-align: center;
     text-transform: uppercase;
     color: $second-title-color;
+
+    @media screen and (min-width: 768px) {
+        font-size: 26px;
+        line-height: 1.15;
+    }
+
+    @media screen and (min-width: 1280px) {
+        font-size: 30px;
+        line-height: 1.13;
+    }  
 }
 
 .tradition-question {
@@ -36,14 +77,40 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: $accent-color;
+
+    @media screen and (min-width: 768px) {
+        margin-bottom: 50px;
+
+        font-size: 48px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        margin-bottom: 55px;
+
+        font-size: 58px;
+        line-height: 1.14;
+    }  
 }
 
 .tradition-text-conteiner {
-    margin-bottom: 40px;
+    @media screen and (min-width: 768px) {
+        padding-top: 50px;
+    }
 }
 
 .tradition-img {
     margin-bottom: 45px;
+
+    @media screen and (min-width: 768px) {
+        margin-right: 17px;
+        margin-bottom: 0;  
+        width: 340px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        margin-right: 74px;
+        width: 516px;
+    }
 }
 
 .tradition-text {
@@ -52,17 +119,51 @@
     margin-bottom: 30px;
     
     font-size: 12px;
-    line-height: 1.9;
+    line-height: 1.6;
+
+    @media screen and (min-width: 768px) {
+        padding: 0;
+        margin-bottom: 28px;
+        max-width: 340px;
+        font-size: 14px;
+        line-height: 1.8;  
+    }
+
+    @media screen and (min-width: 1280px) {
+        margin-bottom: 35px;
+        max-width: 463px;
+        font-size: 16px;
+        line-height: 1.75; 
+    } 
 }
 
 .tradition-secondary-text {
     margin-bottom: 20px;
     color: $second-text-color;
+
+    @media screen and (min-width: 768px) {
+        max-width: 340px;
+        margin-bottom: 62px;  
+    }
+
+    @media screen and (min-width: 1280px) {
+        max-width: 463px;
+        font-size: 16px;
+        line-height: 1.75; 
+    } 
+
+    @media screen and (min-width: 1280px) {
+        margin-bottom: 45px;
+    } 
 }
 
 .tradition-text-part {
     display: block;
     padding-top: 10px;
+
+    @media screen and (min-width: 1280px) {
+        padding-top: 25px;
+    } 
 }
 
 .tradition-btn {
@@ -74,7 +175,7 @@
     width: 176px;
     height: 44px;
 
-    font-weight: bold;
+    font-weight: 700;
     font-size: 14px;
     line-height: 1.29;
 
@@ -82,6 +183,21 @@
     background-color: $button-bg-1;
     border-radius: 22px;
     border: none;
+
+    &:hover,
+    &:focus {
+        background-color: $button-hover-1;
+    }
+
+    
+    @media screen and (min-width: 768px) {
+        margin-left: 0; 
+    }
+
+    @media screen and (min-width: 1280px) {
+        font-size: 16px;
+        line-height: 1.31;
+    } 
 }
 
 .tradition-btn-span {
@@ -93,28 +209,72 @@
     stroke: $button-bg-2;
 }
 
+.tradition-list {
+    @media screen and (min-width: 768px) {
+        display: flex;
+    }  
+}
+
 .tradition-item:not(:last-child) {
     margin-bottom: 38px;
+    
+    @media screen and (min-width: 768px) {
+        margin-bottom: 0;
+        margin-right: 60px;
+    }
 }
 
 .tradition-item-img {
     margin-bottom: 15px;
+
+    @media screen and (min-width: 768px) {
+        margin-bottom: 35px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        margin-bottom: 40px;
+    }
 }
 
 .tradition-data {
     display: block;
     padding-bottom: 15px;
     font-family: Titan One;
+    font-weight: 400;
     font-size: 36px;
-    line-height: 41px;
+    line-height: 1.14;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: $button-bg-2;
+
+    @media screen and (min-width: 768px) {
+        font-size: 48px;
+        line-height: 1.15;
+    }
+
+    @media screen and (min-width: 1280px) {
+        font-size: 58px;
+        line-height: 1.14;
+    }
 }
 
 .tradition-list-text {
     max-width: 230px;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 12px;
     line-height: 2.0;
+
+    @media screen and (min-width: 768px) {
+        max-width: 180px;
+        font-size: 14px;
+        line-height: 1.71;
+    } 
+    
+    @media screen and (min-width: 1280px) {
+        max-width: 330px;
+        font-size: 16px;
+        line-height: 1.75;
+
+        letter-spacing: 0.02em;
+    }
 }
