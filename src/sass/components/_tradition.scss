@@ -4,7 +4,7 @@
 
   background-color: $second-bg-color;
   background-repeat: no-repeat;
-  background-position: 80% 51%;
+  background-position: top 766px right 0px;
   background-size: contain;
 
   @media screen and (max-width: 767px) {
@@ -26,6 +26,7 @@
   @media screen and (min-width: 1280px) {
     padding-bottom: 310px;
     background-image: url(../images/3-desktop/traditionbg.png);
+    background-position: top 342px right 0px;
 
     @media screen and (min-device-pixel-ratio: 2),
       screen and (-webkit-min-device-pixel-ratio: 2),
@@ -121,6 +122,7 @@
 
   font-size: 12px;
   line-height: 1.6;
+  font-weight: 500;
 
   @media screen and (min-width: 768px) {
     padding: 0;
@@ -168,6 +170,7 @@
 }
 
 .tradition-btn {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
