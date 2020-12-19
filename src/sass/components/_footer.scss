@@ -8,7 +8,7 @@
     display: flex;
     padding-bottom: 91px;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 767px) {
     padding-bottom: 97px;
   }
   @media screen and (min-width: 1280px) {
@@ -32,6 +32,7 @@
     width: 450px;
   }
 }
+
 .toptext {
   font-family: Titan One;
   font-style: normal;
@@ -45,6 +46,7 @@
     margin-bottom: 17px;
   }
   @media screen and (min-width: 768px) {
+    margin-bottom: 15px;
     font-size: 26px;
     line-height: 1.153;
   }
@@ -77,6 +79,7 @@
   @media screen and (max-width: 767px) {
     padding-bottom: 43px;
   }
+  
 }
 .contacts-icon__list {
   display: flex;
@@ -97,10 +100,17 @@
   width: 32px;
   height: 32px;
   background-color: $second-title-color;
+  transition: all 250ms ease;
+  &:hover {
+    background-color: #D41443;   
+  }  
 }
 .icon-link {
   fill: $button-bg-1;
   padding-top: 2px;
+    &_telegram {
+      margin-left: -3px;
+    }
 }
 .contacts-tel {
   font-family: DM Sans;
@@ -141,15 +151,24 @@
     padding-bottom: 10px;
   }
 }
-.content-container .btn {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 165px;
+    &:not(:last-child) {
+      margin-right: 15px;
+  }
+  @media screen and (max-width: 767px){
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 113px;
+  }
+}
+.footer-nav .btn {
   padding: 0;
   padding-top: 12px;
   padding-bottom: 12px;
   display: block;
-  width: 161px;
 
   font-weight: 700;
   font-size: 16px;
@@ -165,13 +184,32 @@
     background-color: $button-hover-1;
   }
 }
+.footer-red {
+  margin-bottom: 10px;
+  max-width: 161px;
+  width: 100%; 
+  @media screen and (min-width: 768px){
+    margin: 0 15px 0 0;
+    max-width: 191px;
+    width: 100%;
+  }
+}
+.footer-white {
+  width: 100%;
+  max-width: 161px;
+  @media screen and (min-width: 768px){
+    max-width: 174px;
+    width: 100%;
+  }
+}
+
+button {
+  outline: transparent;
+}
+
 .btn.footer-red {
   background-color: $button-bg-2;
   color: $button-bg-1;
-  &:hover,
-  &:focus {
-    background-color: $button-hover-2;
-  }
 }
 .footer-btn-icon {
   margin-left: 8px;
