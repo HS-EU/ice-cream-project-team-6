@@ -118,24 +118,35 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/menu.js":[function(require,module,exports) {
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 (function () {
-  var menuBtnOpen = document.querySelector('[menu-button-open]');
-  var menuBtnClose = document.querySelector('[menu-button-close]');
-  var mobileMenuRef = document.querySelector('[data-menu]');
-  menuBtnOpen.addEventListener('click', function () {
-    var expanded = menuBtnOpen.getAttribute('aria-expanded') === 'true' || false;
-    var expanded2 = menuBtnClose.getAttribute('aria-expanded') === 'false' || true;
-    menuBtnClose.classList.toggle('is-open');
-    menuBtnOpen.classList.toggle('is-open');
-    mobileMenuRef.classList.toggle('is-open');
+  var refs = {
+    openBtn: document.querySelector('[menu-button-open]'),
+    closeBtn: document.querySelector('[menu-button-close]'),
+    menu: document.querySelector('[data-menu]'),
+    navLinks: document.getElementsByClassName('site-nav-link')
+  };
+  refs.openBtn.addEventListener('click', toggleModal);
+  refs.closeBtn.addEventListener('click', toggleModal);
+
+  _toConsumableArray(refs.navLinks).forEach(function (elem) {
+    return elem.addEventListener('click', toggleModal);
   });
-  menuBtnClose.addEventListener('click', function () {
-    var expanded = menuBtnOpen.getAttribute('aria-expanded') === 'true' || false;
-    var expanded2 = menuBtnClose.getAttribute('aria-expanded') === 'false' || true;
-    menuBtnClose.classList.toggle('is-open');
-    menuBtnOpen.classList.toggle('is-open');
-    mobileMenuRef.classList.toggle('is-open');
-  });
+
+  function toggleModal() {
+    refs.menu.classList.toggle('is-open');
+  }
 })();
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -165,7 +176,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51276" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52299" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

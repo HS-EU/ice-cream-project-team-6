@@ -51,6 +51,7 @@ body {
   font-weight: 500;
   font-size: 14px;
   color: #000000;
+  overflow-x: hidden;
 }
 
 ul {
@@ -307,10 +308,11 @@ p {
   stroke: #ffffff;
   cursor: pointer;
 }
-.mobile-menu-close:hover, .mobile-menu-close:focus {
+.mobile-menu-btn:hover .mobile-menu-close, .mobile-menu-btn:focus .mobile-menu-close {
   stroke: #d41443;
 }
 .mobile-menu-btn {
+  cursor: pointer;
   display: block;
   position: absolute;
   top: 24px;
@@ -521,6 +523,11 @@ p {
 .hero-btn-accent {
   margin-right: 8px;
 }
+.hero-btn-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
 @media screen and (min-width: 1280px) {
   .hero-btn {
     min-width: 104px;
@@ -528,10 +535,10 @@ p {
     font-size: 14px;
     line-height: 1.23;
     padding: 8px 20px;
-    margin-left: 23px;
   }
   .hero-btn-accent {
     margin-right: 15px;
+    margin-left: 23px;
   }
 }
 .hero-btn:hover, .hero-btn:focus {
@@ -541,6 +548,11 @@ p {
   color: #ffffff;
   background-color: #d41443;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), text-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hero-btn-accent-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
 }
 .hero-btn-accent:hover, .hero-btn-accent:focus {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -566,8 +578,15 @@ p {
 .statistics-item {
   display: flex;
   flex-direction: column;
-  margin-bottom: 13px;
   position: relative;
+}
+.statistics-item:not(:first-child) {
+  margin-top: 13px;
+}
+@media screen and (min-width: 1280px) {
+  .statistics-item:not(:first-child) {
+    margin-top: 18px;
+  }
 }
 .statistics-item::before {
   content: "";
@@ -672,19 +691,23 @@ p {
   }
 }
 .div-milk-btn:hover, .div-milk-btn:focus {
-  background-color: #ecebeb;
+  background-color: #d41443;
+}
+.div-milk-btn:hover .div-milk-btn-icon, .div-milk-btn:focus .div-milk-btn-icon {
+  fill: #ffffff;
 }
 .div-milk-btn-icon {
   position: absolute;
-  top: 25%;
-  left: 30%;
+  top: 5px;
+  left: 5.5px;
   fill: #d41443;
   width: 8px;
   height: 8px;
 }
 @media screen and (min-width: 1280px) {
   .div-milk-btn-icon {
-    top: 30%;
+    top: 8px;
+    left: 7px;
     width: 11px;
     height: 11px;
   }
@@ -912,6 +935,8 @@ p {
 }
 
 .product-btn {
+  cursor: pointer;
+  position: relative;
   display: inline-block;
   margin-bottom: 41px;
   width: 40px;
@@ -935,6 +960,11 @@ p {
 .icon-arrow-right {
   fill: #d41443;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  top: 14px;
+  left: 13px;
 }
 
 .product-btn:hover,
@@ -973,7 +1003,7 @@ p {
   padding-bottom: 145px;
   background-color: #fff5f6;
   background-repeat: no-repeat;
-  background-position: 80% 51%;
+  background-position: top 766px right 0px;
   background-size: contain;
 }
 @media screen and (max-width: 767px) {
@@ -995,6 +1025,7 @@ p {
   .tradition {
     padding-bottom: 310px;
     background-image: url(/traditionbg.022194dd.png);
+    background-position: top 342px right 0px;
   }
 }
 @media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (-o-min-device-pixel-ratio: 2/1), screen and (min-width: 1280px) and (min-resolution: 192dpi), screen and (min-width: 1280px) and (min-resolution: 2dppx) {
@@ -1092,6 +1123,7 @@ p {
   margin-bottom: 30px;
   font-size: 12px;
   line-height: 1.6;
+  font-weight: 500;
 }
 @media screen and (min-width: 768px) {
   .tradition-text {
@@ -1145,6 +1177,7 @@ p {
 }
 
 .tradition-btn {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1297,10 +1330,10 @@ p {
 }
 @media screen and (min-width: 1280px) {
   .slider-collage {
-    width: 1280px;
+    width: 100%;
     height: auto;
     left: 0;
-    top: -171px;
+    top: -173.2px;
   }
 }
 
@@ -1538,7 +1571,7 @@ p {
   overflow: hidden;
   transition-property: transform;
   transition-duration: 250ms;
-  transition-timing-function: linear;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .slick-dots button:hover {
   transform: scale(1.4);
@@ -1590,6 +1623,7 @@ p {
 @media screen and (min-width: 768px) {
   .outlets-list {
     display: flex;
+    top: -78px;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -1873,9 +1907,6 @@ p {
   border-radius: 22px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.outlets-nav .btn:hover, .outlets-nav .btn:focus {
-  background-color: #ecebeb;
-}
 
 .outlets-red {
   margin-bottom: 10px;
@@ -1891,6 +1922,7 @@ p {
 }
 
 .outlets-white {
+  cursor: pointer;
   width: 100%;
   max-width: 161px;
 }
@@ -1900,14 +1932,21 @@ p {
     width: 100%;
   }
 }
+.outlets-white:hover, .outlets-white:focus {
+  background-color: #ecebeb;
+}
 
 button {
   outline: transparent;
 }
 
 .btn.outlets-red {
+  cursor: pointer;
   background-color: #d41443;
   color: #ffffff;
+}
+.btn.outlets-red:hover, .btn.outlets-red:focus {
+  background-color: #c7133e;
 }
 
 .outlets-btn-icon {
@@ -1928,24 +1967,17 @@ button {
   background-color: #fff5f6;
 }
 
-.footer-content {
-  border-bottom: 1px solid #e5e5e5;
-}
 @media screen and (min-width: 768px) {
   .footer-content {
     display: flex;
     padding-bottom: 91px;
   }
 }
-@media screen and (max-width: 767px) {
-  .footer-content {
-    padding-bottom: 97px;
-  }
-}
 @media screen and (min-width: 1280px) {
   .footer-content {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 98px;
   }
 }
 
@@ -1992,7 +2024,7 @@ button {
 @media screen and (min-width: 1280px) {
   .toptext {
     margin-bottom: 15px;
-    font-size: 28px;
+    font-size: 30px;
     line-height: 1.133;
   }
 }
@@ -2033,6 +2065,7 @@ button {
 }
 
 .contacts-icon__item {
+  cursor: pointer;
   margin-right: 28px;
   display: flex;
   justify-content: center;
@@ -2041,7 +2074,7 @@ button {
   width: 32px;
   height: 32px;
   background-color: #ffa5ba;
-  transition: all 250ms ease;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts-icon__item:last-child {
   margin-right: 0;
@@ -2066,15 +2099,25 @@ button {
   line-height: 1.86;
   text-align: right;
 }
+@media screen and (min-width: 768px) {
+  .contacts-tel {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .contacts-tel {
+    font-size: 16px;
+  }
+}
 
 .tel-number {
   color: #d41443;
   text-decoration: none;
-  margin-left: 1px;
 }
 
 .copyright {
   text-align: center;
+  border-top: 1px solid #e5e5e5;
 }
 
 .copyright-text {

@@ -13969,6 +13969,15 @@ $(document).ready(function () {
     autoplaySpeed: 7500
   });
 });
+},{}],"js/remove-menu.js":[function(require,module,exports) {
+$(document).mouseup(function (e) {
+  var div = $(".mobile-menu-content");
+
+  if (!div.is(e.target) && div.has(e.target).length === 0) {
+    $('.mobile-menu').removeClass('is-open');
+    $('.content-container-overlay').removeClass('is-open');
+  }
+});
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -13977,7 +13986,9 @@ require("./sass/main.scss");
 require("./slick/slick.js");
 
 require("./js/slider");
-},{"./sass/main.scss":"sass/main.scss","./slick/slick.js":"slick/slick.js","./js/slider":"js/slider.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("./js/remove-menu");
+},{"./sass/main.scss":"sass/main.scss","./slick/slick.js":"slick/slick.js","./js/slider":"js/slider.js","./js/remove-menu":"js/remove-menu.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -14005,7 +14016,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51276" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52299" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
