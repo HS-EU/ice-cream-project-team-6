@@ -2135,7 +2135,7 @@ button {
 @media screen and (max-width: 767px) {
   .copyright-text {
     white-space: pre-line;
-    width: 150px;
+    width: 145px;
   }
 }
 @media screen and (min-width: 768px) {
