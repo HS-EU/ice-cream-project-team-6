@@ -2122,7 +2122,9 @@ button {
 
 .copyright-text {
   padding-top: 22px;
-  padding-bottom: 23px;
+  padding-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
   font-family: DM Sans;
   font-style: normal;
   font-weight: bold;
@@ -2133,6 +2135,7 @@ button {
 @media screen and (max-width: 767px) {
   .copyright-text {
     white-space: pre-line;
+    width: 150px;
   }
 }
 @media screen and (min-width: 768px) {
