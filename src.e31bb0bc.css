@@ -1854,6 +1854,9 @@ p {
   color: #907e82;
   text-decoration: none;
 }
+.contacts-item:hover, .contacts-item:focus {
+  color: #d41443;
+}
 @media screen and (min-width: 768px) {
   .contacts-item {
     font-size: 14px;
