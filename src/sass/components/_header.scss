@@ -595,9 +595,11 @@
     background-color: $third-text-color;
     border: 0;
     border-radius: 50%;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 7px;
-    position: relative;
+    fill: $accent-color;
 
     @media screen and (min-width: 1280px) {
       margin-top: 20px;
@@ -616,15 +618,9 @@
     }
   }
   &-btn-icon {
-    position: absolute;
-    top: 5px;
-    left: 5.5px;
-    fill: $accent-color;
     width: 8px;
     height: 8px;
     @media screen and (min-width: 1280px) {
-      top: 8px;
-      left: 7px;
       width: 11px;
       height: 11px;
     }

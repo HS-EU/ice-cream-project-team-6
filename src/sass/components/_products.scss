@@ -177,8 +177,9 @@
 
 .product-btn {
   cursor: pointer;
-  position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 41px;
   width: 40px;
   height: 40px;
@@ -203,9 +204,6 @@
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   width: 13px;
   height: 13px;
-  position: absolute;
-  top: 14px;
-  left: 13px;
 }
 
 .product-btn:hover,
