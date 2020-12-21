@@ -18,4 +18,4 @@ $(document).mouseup(function(e){var n=$(".mobile-menu-content");n.is(e.target)||
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./slick/slick.js"),require("./js/slider"),require("./js/remove-menu");
 },{"./sass/main.scss":"clu1","./slick/slick.js":"qpy8","./js/slider":"wzuc","./js/remove-menu":"fV8Q"}]},{},["Focm"], null)
-//# sourceMappingURL=/ice-cream-project-team-6/src.7c8ab4bb.js.map
+//# sourceMappingURL=/ice-cream-project-team-6/src.98a4efc2.js.map
