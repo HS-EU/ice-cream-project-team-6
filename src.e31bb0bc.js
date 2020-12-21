@@ -13970,8 +13970,8 @@ $(document).ready(function () {
   });
 });
 },{}],"js/remove-menu.js":[function(require,module,exports) {
-$(document).mouseup(function (e) {
-  var div = $(".mobile-menu-content");
+$(document).bind('touchstart', function (e) {
+  var div = $('.mobile-menu-content');
 
   if (!div.is(e.target) && div.has(e.target).length === 0) {
     $('.mobile-menu').removeClass('is-open');
@@ -14016,7 +14016,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52273" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53016" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
