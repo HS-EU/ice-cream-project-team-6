@@ -252,6 +252,10 @@
   line-height: 1.5;
   color: $second-text-color;
   text-decoration: none;
+  &:hover,
+  &:focus {
+    color: $button-bg-2;
+  }
 
   @media screen and (min-width: 768px) {
     font-size: 14px;
