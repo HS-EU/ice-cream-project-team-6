@@ -115,42 +115,22 @@ p {
   display: block;
 }
 
-.content-container-overlay {
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media screen and (max-width: 408px) {
-  .content-container-overlay {
-    min-width: 320px;
-  }
-}
-@media screen and (min-width: 409px) and (max-width: 767px) {
-  .content-container-overlay {
-    width: 408px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .content-container-overlay {
-    width: 768px;
-    padding-left: 34px;
-    padding-right: 34px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .content-container-overlay {
-    width: 1280px;
-    padding-left: 115px;
-    padding-right: 115px;
-  }
-}
-
 .overlay {
   position: relative;
   padding-top: 6px;
   height: 502px;
   overflow-x: hidden;
+}
+@media screen and (max-width: 408px) {
+  .overlay {
+    width: auto;
+    min-width: 320px;
+  }
+}
+@media screen and (min-width: 409px) and (max-width: 767px) {
+  .overlay {
+    width: 408px;
+  }
 }
 @media screen and (min-width: 768px) {
   .overlay {
